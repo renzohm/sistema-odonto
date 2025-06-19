@@ -1,0 +1,160 @@
+/* Estilos globales para el sistema odontológico */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+/* Estilos para las tarjetas de estadísticas */
+.stat-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card .ant-card-body {
+  padding: 20px;
+}
+
+/* Estilos para las tarjetas de doctores */
+.doctor-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-card .ant-card-body {
+  padding: 24px;
+}
+
+.doctor-card .ant-card-actions {
+  border-top: 1px solid #f0f0f0;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.doctor-card .ant-card-actions > li {
+  margin: 8px 0;
+}
+
+.doctor-card .ant-card-actions > li > span {
+  width: 100%;
+}
+
+/* Estilos para el calendario */
+.events {
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.ant-picker-calendar-date-content {
+  height: 60px !important;
+  overflow: hidden;
+}
+
+.ant-badge-status-text {
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stat-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .doctor-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .ant-descriptions-item-label {
+    font-size: 12px;
+  }
+  
+  .ant-descriptions-item-content {
+    font-size: 12px;
+  }
+}
+
+/* Animaciones suaves */
+.ant-card,
+.ant-table,
+.ant-modal,
+.ant-drawer {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mejoras en la tabla de pacientes */
+.ant-table-thead > tr > th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+/* Estilos para los tags */
+.ant-tag {
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a6fd8;
+}
