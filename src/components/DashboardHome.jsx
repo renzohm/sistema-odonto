@@ -28,14 +28,6 @@ const DashboardHome = () => {
       suffix: null
     },
     {
-      title: 'Ingresos Mes',
-      value: 45780,
-      icon: <DollarOutlined />,
-      color: '#faad14',
-      prefix: '$',
-      suffix: null
-    },
-    {
       title: 'Doctores Activos',
       value: 8,
       icon: <TeamOutlined />,
@@ -117,7 +109,7 @@ const DashboardHome = () => {
   }
 
   return (
-    <div>
+    <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
       <Title level={2} style={{ marginBottom: '24px', color: '#2c3e50' }}>
         Dashboard Principal
       </Title>

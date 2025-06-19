@@ -73,7 +73,7 @@ const Dashboard = () => {
   }
 
   return (
-    <Layout className="dashboard-layout">
+    <div className="dashboard-wrapper">
       <Sider 
         trigger={null} 
         collapsible 
@@ -99,66 +99,68 @@ const Dashboard = () => {
           className="dashboard-menu"
         />
       </Sider>
-      <Layout style={{ marginLeft: collapsed ? 80 : 240, transition: 'margin-left 0.2s' }}>
-        <Header 
-          style={{ 
-            padding: '0 24px', 
-            background: colorBgContainer,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-            position: 'sticky',
-            top: 0,
-            zIndex: 99
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Button
-              type="text"
-              icon={collapsed ? <DashboardOutlined /> : <DashboardOutlined />}
-              onClick={() => setCollapsed(!collapsed)}
-              style={{ fontSize: '16px', width: 64, height: 64 }}
-            />
-            <Title level={4} style={{ margin: 0, color: '#2c3e50' }}>
-              Sistema Odontológico
-            </Title>
-          </div>
-          
-          <Dropdown
-            menu={{ items: userMenuItems }}
-            placement="bottomRight"
-            trigger={['click']}
+      <div className={collapsed ? 'dashboard-main collapsed' : 'dashboard-main'}>
+        <Layout className="dashboard-layout">
+          <Header 
+            style={{ 
+              padding: '0 24px', 
+              background: colorBgContainer,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              position: 'sticky',
+              top: 0,
+              zIndex: 99
+            }}
           >
-            <div className="user-info">
-              <Avatar 
-                size={40} 
-                icon={<UserOutlined />} 
-                style={{ backgroundColor: '#667eea' }}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Button
+                type="text"
+                icon={collapsed ? <DashboardOutlined /> : <DashboardOutlined />}
+                onClick={() => setCollapsed(!collapsed)}
+                style={{ fontSize: '16px', width: 64, height: 64 }}
               />
-              <span className="user-name">Dr. Juan Pérez</span>
+              <Title level={4} style={{ margin: 0, color: '#2c3e50' }}>
+                Sistema Odontológico
+              </Title>
             </div>
-          </Dropdown>
-        </Header>
-        <Content
-          style={{
-            margin: '24px',
-            padding: 24,
-            minHeight: 'calc(100vh - 112px)',
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-            overflow: 'auto'
-          }}
-        >
-          <Routes>
-            <Route path="/" element={<DashboardHome />} />
-            <Route path="/doctores" element={<Doctores />} />
-            <Route path="/calendario" element={<Calendario />} />
-            <Route path="/pacientes" element={<Pacientes />} />
-          </Routes>
-        </Content>
-      </Layout>
-    </Layout>
+            
+            <Dropdown
+              menu={{ items: userMenuItems }}
+              placement="bottomRight"
+              trigger={['click']}
+            >
+              <div className="user-info">
+                <Avatar 
+                  size={40} 
+                  icon={<UserOutlined />} 
+                  style={{ backgroundColor: '#667eea' }}
+                />
+                <span className="user-name">Dr. Juan Pérez</span>
+              </div>
+            </Dropdown>
+          </Header>
+          <Content
+            style={{
+              margin: '24px',
+              padding: 24,
+              minHeight: 'calc(100vh - 112px)',
+              background: colorBgContainer,
+              borderRadius: borderRadiusLG,
+              overflow: 'auto'
+            }}
+          >
+            <Routes>
+              <Route path="/" element={<DashboardHome />} />
+              <Route path="/doctores" element={<Doctores />} />
+              <Route path="/calendario" element={<Calendario />} />
+              <Route path="/pacientes" element={<Pacientes />} />
+            </Routes>
+          </Content>
+        </Layout>
+      </div>
+    </div>
   )
 }
 

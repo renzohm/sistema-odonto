@@ -277,7 +277,7 @@ const Pacientes = () => {
   }
 
   return (
-    <div>
+    <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
       <div style={{ marginBottom: '24px' }}>
         <Title level={2} style={{ margin: 0, color: '#2c3e50' }}>
           Gestión de Pacientes
