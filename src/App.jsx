@@ -9,9 +9,11 @@ function App() {
     <ConfigProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          {/* Redirige cualquier ruta desconocida al login */}
+          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </Router>
     </ConfigProvider>
